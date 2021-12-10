@@ -4,7 +4,7 @@ import pickle
 app=Flask(__name__)
 
 #load model
-model_file=open('jajal.pkl','rb')
+model_file=open('fix.pkl','rb')
 model=pickle.load(model_file,encoding='bytes')
 
 #make the route
