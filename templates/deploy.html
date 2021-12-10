@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>.footer{padding: 10px;text-align: center;background-color: black;color: white;font-size: 19px;}</style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width initial-scale=1,shrink-to-fit=no">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{url_for('static',filename='style1.css')}}">
+        <link rel="script" type='text/javascript' src="{{url_for('static',filename='js/scripts.js')}}">
+    </head>
+    <body id="atas">
+        <nav class="navbar navbar-expand-lg  fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#awal" onclick="konfirm()">Homepage</a>
+            </div>
+        </nav>
+        <header class="awalan" id="awalan">
+            <div class="  align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto text-uppercase">App Deployment</h1><br>
+                    <a class="btn js-scroll-trigger" href="#selo-1">Get Started</a>
+                </div>
+            </div>
+        </header>
+        <div class="selo-1 text-center" id="selo-1">
+            <p>App Deployment</p>
+        </div>
+        <section class="section-1 text-center" id="section-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3>Index Kandungan Udara Provinsi DKI Jakarta</h3><br>
+                        <form action="{{ url_for('predict')}}" method="post">
+                            <label for="pm10" colo>PM10 : </label>
+                            
+                            
+                            <input type="number" id="pm10" name="pm10" placeholder="PM10" required="required" /><br>
+                        
+                
+                            <label for="pm25">PM25  : </label>
+                            <input type="number" id="pm25" name="pm25" placeholder="PM25" required="required" /><br>
+
+                        
+                            <label for="so2">SO2  : </label>
+                            <input type="number" id="so2" name="so2" placeholder="SO2" required="required" /><br>
+
+                    
+                    
+                            <label for="co">CO    : </label>
+                            <input type="number" name="co" placeholder="SO2" required="required" /><br>
+
+                        
+                            <label for="03">O3     : </label>
+                            <input type="number" id="o3" name="o3" placeholder="O3" required="required" /><br>
+                
+                            <label for="no2">NO2   : </label>
+                            <input type="number" id="no2" name="no2" placeholder="NO2" required="required" /><br><br>
+                        
+                            <button type="submit" class="btn btn-primary btn-large">
+                                Check Air QUality
+                            </button>   
+
+                        </form>
+                                 
+                          
+                    
+                    </div>
+                    <div class="col-sm-7">
+                        <h1>Kualitas Udara Berdasarkan Index</h1><br><br>
+                        <ul>
+                            <h3>PM10    :   {{pm10}}</h3>
+                            <h3>PM25    :   {{pm25}}</h3>
+                            <h3>SO2     :   {{so2}}</h3>
+                            <h3>CO      :   {{co}}</h3>
+                            <h3>O3      :   {{o3}}</h3>
+                            <h3>NO2     :   {{no2}}</h3>
+                
+                        <h2>Air Quality:    {{air_quality}}</h2>
+                    </div>
+                </div>
+                
+            </div><br><br>
+            <div class="footer">
+                <i>Support by:</i>
+                <p style="font-family:arial;"><img src="{{url_for('static',filename='permen.png')}}" style="height: 40px;position: inherit;"/> <b>Jagoan Neon Study Group</b><br>
+                Copyright &copy;2021 JNSG<br>
+                <a href="#atas">ke Atas</a>
+            </div>
+        </section>
+        
+
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="{{url_for('static',filename='js/scripts.js')}}"></script>
+        <script src="{{url_for('static',filename='jqueries.js')}}"></script>
+        <script src="{{url_for('static',filename='ajax.js')}}"></script>
+</html>
