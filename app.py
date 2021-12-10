@@ -34,7 +34,7 @@ def predict():
     o3=int(request.form['o3'])
     no2=int(request.form['no2'])
 
-    prediction=model.predict([[pm10,pm25,so2,co,o3,no2]])
+    prediction=model.predict([[20,30,30,20,30,40]])
     output=prediction[0]
     # if prediction[0]==0:
     #     output=="Bagus"
