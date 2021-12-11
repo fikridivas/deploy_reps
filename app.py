@@ -35,7 +35,7 @@ def predict():
 #     o3=int(request.form['o3'])
 #     no2=int(request.form['no2'])
 
-    prediction=model.predict([[data]])
+    prediction=model.predict([data])
     output=prediction[0]
     # if prediction[0]==0:
     #     output=="Bagus"
