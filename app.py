@@ -16,7 +16,7 @@ def index():
 
 @app.route('/predict',methods=['POST'])
 
-def predict():
+def predict(self):
     #predict air quality from air index
 #     pm10,pm25,so2,co,o3,no2=[x for x in request.form.values()]
 
@@ -28,14 +28,14 @@ def predict():
 #     data.append(int(co))
 #     data.append(int(o3))
 #     data.append(int(no2))
-    pm10=int(request.form['pm10'])
-    pm25=int(request.form['pm25'])
-    so2=int(request.form['so2'])
-    co=int(request.form['co'])
-    o3=int(request.form['o3'])
-    no2=int(request.form['no2'])
+    self.pm10=int(request.form['pm10'])
+    self.pm25=int(request.form['pm25'])
+    self.so2=int(request.form['so2'])
+    self.co=int(request.form['co'])
+    self.o3=int(request.form['o3'])
+    self.no2=int(request.form['no2'])
 
-    prediction=model.predict([[pm10,pm25,so2,co,o3,no2]])
+    prediction=model.predict([[self.pm10,self.pm25,self.so2,self.co,self.o3,self.no2]])
     output=prediction[0]
     # if prediction[0]==0:
     #     output=="Bagus"
