@@ -15,13 +15,13 @@ def index():
     return render_template('deploy.html',pm10="0",pm25='0',so2='0',co='0',o3='0',no2='0',air_quality='Normal')
 
 @app.route('/predict',methods=['POST'])
-def __init__(self,pm10,pm25,so2,co,o3,no2):
-    self.pm10=pm10
-    self.pm25=pm25
-    self.so2=so2
-    self.co=co
-    self.o3=o3
-    self.no2=no2
+# def __init__(self,pm10,pm25,so2,co,o3,no2):
+#     self.pm10=pm10
+#     self.pm25=pm25
+#     self.so2=so2
+#     self.co=co
+#     self.o3=o3
+#     self.no2=no2
 
 def predict(self):
     #predict air quality from air index
