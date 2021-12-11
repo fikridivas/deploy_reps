@@ -16,7 +16,7 @@ def index():
 
 @app.route('/predict',methods=['POST'])
 
-def predict(self):
+def predict():
     #predict air quality from air index
 #     pm10,pm25,so2,co,o3,no2=[x for x in request.form.values()]
 
