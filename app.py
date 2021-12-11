@@ -18,24 +18,24 @@ def index():
 
 def predict():
     #predict air quality from air index
-    # pm10,pm25,so2,co,o3,no2=[x for x in request.form.values()]
+    pm10,pm25,so2,co,o3,no2=[x for x in request.form.values()]
 
-    # data=[]
-    # #add data from form values
-    # data.append(float(pm10))
-    # data.append(float(pm25))
-    # data.append(float(so2))
-    # data.append(float(co))
-    # data.append(float(o3))
-    # data.append(float(no2))
-    pm10=int(request.form['pm10'])
-    pm25=int(request.form['pm25'])
-    so2=int(request.form['so2'])
-    co=int(request.form['co'])
-    o3=int(request.form['o3'])
-    no2=int(request.form['no2'])
+    data=[]
+    #add data from form values
+    data.append(int(pm10))
+    data.append(int(pm25))
+    data.append(int(so2))
+    data.append(int(co))
+    data.append(int(o3))
+    data.append(int(no2))
+#     pm10=int(request.form['pm10'])
+#     pm25=int(request.form['pm25'])
+#     so2=int(request.form['so2'])
+#     co=int(request.form['co'])
+#     o3=int(request.form['o3'])
+#     no2=int(request.form['no2'])
 
-    prediction=model.predict([[pm10,pm25,so2,co,o3,no2]])
+    prediction=model.predict([[data]])
     output=prediction[0]
     # if prediction[0]==0:
     #     output=="Bagus"
