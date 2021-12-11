@@ -53,4 +53,4 @@ def predict():
 
     return render_template('deploy.html',pm10=pm10,pm25=pm25,so2=so2,co=co,o3=o3,no2=no2,air_quality=soutput)
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=False)
