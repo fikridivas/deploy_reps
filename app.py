@@ -51,6 +51,6 @@ def predict(self):
     # elif prediction[0]=="2":
     #     output=="Jelek"
 
-    return render_template('deploy.html',pm10=pm10,pm25=pm25,so2=so2,co=co,o3=o3,no2=no2,air_quality=output)
+    return render_template('deploy.html',pm10=self.pm10,pm25=self.pm25,so2=self.so2,co=self.co,o3=self.o3,no2=self.no2,air_quality=output)
 if __name__=='__main__':
     app.run(debug=False)
