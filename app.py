@@ -23,7 +23,7 @@ def index():
 #     self.o3=o3
 #     self.no2=no2
 
-def predict(self):
+def predict():
     #predict air quality from air index
 #     pm10,pm25,so2,co,o3,no2=[x for x in request.form.values()]
 
@@ -35,15 +35,15 @@ def predict(self):
 #     data.append(int(co))
 #     data.append(int(o3))
 #     data.append(int(no2))
-    self.pm10=int(request.form['pm10'])
-    self.pm25=int(request.form['pm25'])
-    self.so2=int(request.form['so2'])
-    self.co=int(request.form['co'])
-    self.o3=int(request.form['o3'])
-    self.no2=int(request.form['no2'])
+    pm10=int(request.form['pm10'])
+    pm25=int(request.form['pm25'])
+    so2=int(request.form['so2'])
+    co=int(request.form['co'])
+    o3=int(request.form['o3'])
+    no2=int(request.form['no2'])
 
-    self.prediction=model.predict([[self.pm10,self.pm25,self.so2,self.co,self.o3,self.no2]])
-    self.output=self.prediction[0]
+    prediction=model.predict([[pm10,pm25,so2,co,o3,no2]])
+    output=prediction[0]
     # if prediction[0]==0:
     #     output=="Bagus"
     # elif prediction[0]==1:
@@ -51,6 +51,6 @@ def predict(self):
     # elif prediction[0]=="2":
     #     output=="Jelek"
 
-    return render_template('deploy.html',pm10=self.pm10,pm25=self.pm25,so2=self.so2,co=self.co,o3=self.o3,no2=self.no2,air_quality=self.output)
+    return render_template('deploy.html',pm10=pm10,pm25=pm25,so2=so2,co=co,o3=o3,no2=no2,air_quality=soutput)
 if __name__=='__main__':
     app.run(debug=True)
