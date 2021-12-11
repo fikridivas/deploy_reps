@@ -42,8 +42,8 @@ def predict(self):
     self.o3=int(request.form['o3'])
     self.no2=int(request.form['no2'])
 
-    prediction=model.predict([[self.pm10,self.pm25,self.so2,self.co,self.o3,self.no2]])
-    output=prediction[0]
+    self.prediction=model.predict([[self.pm10,self.pm25,self.so2,self.co,self.o3,self.no2]])
+    self.output=self.prediction[0]
     # if prediction[0]==0:
     #     output=="Bagus"
     # elif prediction[0]==1:
@@ -51,6 +51,6 @@ def predict(self):
     # elif prediction[0]=="2":
     #     output=="Jelek"
 
-    return render_template('deploy.html',pm10=self.pm10,pm25=self.pm25,so2=self.so2,co=self.co,o3=self.o3,no2=self.no2,air_quality=output)
+    return render_template('deploy.html',pm10=self.pm10,pm25=self.pm25,so2=self.so2,co=self.co,o3=self.o3,no2=self.no2,air_quality=self.output)
 if __name__=='__main__':
     app.run(debug=True)
